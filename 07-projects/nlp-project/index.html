@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Text Detector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- ── Top Bar ──────────────────────────────────────────────── -->
+    <header class="topbar">
+      <span class="logo">🔍 AI Text Detector</span>
+      <div class="topbar-right">
+        <input id="api-url" type="text" placeholder="http://127.0.0.1:8000" value="http://127.0.0.1:8000" />
+        <button id="health-btn" onclick="checkHealth()">Ping API</button>
+        <span id="health-dot" class="dot dot--idle" title="Server status"></span>
+      </div>
+    </header>
+
+    <!-- ── Two-column workspace ─────────────────────────────────── -->
+    <main class="workspace">
+
+      <!-- LEFT: Input -->
+      <section class="panel panel--left">
+        <div class="panel-header">
+          <p class="panel-title">Input Text</p>
+          <span id="char-count" class="char-count">0 chars</span>
+        </div>
+        <textarea id="text-input"
+          placeholder="Paste any essay, paragraph or article here…&#10;&#10;Tip: Ctrl + Enter to analyze"></textarea>
+        <button id="predict-btn" class="btn-analyze" onclick="predict()">
+          <span id="btn-text">Analyze Text</span>
+        </button>
+      </section>
+
+      <!-- RIGHT: Result -->
+      <section class="panel panel--right">
+
+        <!-- Empty state -->
+        <div id="placeholder" class="placeholder">
+          <div class="placeholder-icon">📄</div>
+          <p class="placeholder-title">No analysis yet</p>
+          <p class="placeholder-sub">Enter text on the left and<br>click <strong>Analyze Text</strong></p>
+        </div>
+
+        <!-- Result: just label + percentage -->
+        <div id="result-section" class="result hidden">
+          <div id="result-badge" class="result-badge"></div>
+          <div id="result-pct"   class="result-pct"></div>
+          <p class="result-caption">chance of being AI-generated</p>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Error bar -->
+    <div id="error-bar" class="error-bar hidden"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+/* ── Reset ────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design tokens ───────────────────────────────────────────────────────── */
+:root {
+  --bg: #f5f7ff;
+  --surface: #ffffff;
+  --border: #e2e6f3;
+  --accent: #5b6af0;
+  --accent-dk: #3730a3;
+  --accent-lt: #eef0fe;
+  --text: #1a1d2e;
+  --muted: #64748b;
+  --green: #0d9e6e;
+  --green-lt: #ecfdf5;
+  --red: #dc3545;
+  --red-lt: #fff1f2;
+  --radius: 12px;
+  --topbar-h: 58px;
+}
+
+/* ── Full-screen shell ───────────────────────────────────────────────────── */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────────── */
+.topbar {
+  height: var(--topbar-h);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  gap: 16px;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-right input[type="text"] {
+  width: 230px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  padding: 7px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.topbar-right input[type="text"]:focus {
+  border-color: var(--accent);
+}
+
+/* Ping button */
+#health-btn {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+#health-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Status dot */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.dot--idle {
+  background: #cbd5e1;
+}
+
+.dot--ok {
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(13, 158, 110, .2);
+}
+
+.dot--error {
+  background: var(--red);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, .2);
+}
+
+/* ── Workspace (two columns) ─────────────────────────────────────────────── */
+.workspace {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding: 24px;
+  gap: 20px;
+}
+
+/* ── Panel ───────────────────────────────────────────────────────────────── */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(26, 29, 46, .05), 0 6px 24px rgba(26, 29, 46, .04);
+}
+
+.panel--left {
+  flex: 1.1;
+  padding: 20px;
+  gap: 14px;
+}
+
+.panel--right {
+  flex: 0.9;
+  padding: 20px;
+  gap: 16px;
+}
+
+/* Panel header row */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.char-count {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* ── Textarea ────────────────────────────────────────────────────────────── */
+textarea {
+  flex: 1;
+  width: 100%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  padding: 14px 16px;
+  outline: none;
+  resize: none;
+  /* no manual resize — flex handles height */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91, 106, 240, .14);
+  background: #fff;
+}
+
+textarea::placeholder {
+  color: #b0b8d0;
+  line-height: 1.7;
+}
+
+/* ── Analyze button ──────────────────────────────────────────────────────── */
+.btn-analyze {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.93rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
+}
+
+.btn-analyze:hover {
+  background: var(--accent-dk);
+  box-shadow: 0 4px 16px rgba(91, 106, 240, .35);
+}
+
+.btn-analyze:active {
+  transform: scale(0.98);
+}
+
+.btn-analyze:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+.divider {
+  display: none;
+}
+
+/* gap between flex children is enough */
+
+/* ── Placeholder ─────────────────────────────────────────────────────────── */
+.placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  user-select: none;
+}
+
+.placeholder-icon {
+  font-size: 2.8rem;
+  opacity: .35;
+}
+
+.placeholder-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.placeholder-sub {
+  font-size: 0.82rem;
+  color: #a0aec0;
+  line-height: 1.5;
+}
+
+/* ── Result ──────────────────────────────────────────────────────────────── */
+.result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeUp 0.4s ease both;
+}
+
+/* Label badge */
+.result-badge {
+  font-size: 1.45rem;
+  font-weight: 800;
+  padding: 16px 32px;
+  border-radius: 14px;
+  letter-spacing: -0.4px;
+  text-align: center;
+  width: 100%;
+}
+.result-badge.ai {
+  background: var(--red-lt);
+  color: var(--red);
+  border: 1.5px solid rgba(220, 53, 69, .18);
+}
+.result-badge.human {
+  background: var(--green-lt);
+  color: var(--green);
+  border: 1.5px solid rgba(13, 158, 110, .18);
+}
+
+/* Big percentage */
+.result-pct {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.result-caption {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: -8px;   /* pull it closer to the number */
+}
+/* ── Error bar ───────────────────────────────────────────────────────────── */
+.error-bar {
+  flex-shrink: 0;
+  background: rgba(220, 53, 69, .09);
+  border-top: 1px solid rgba(220, 53, 69, .25);
+  color: #a01a27;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+}
+
+/* ── Utility ─────────────────────────────────────────────────────────────── */
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# Jupyter Notebook Checkpoints & temporary files
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large Datasets (>100MB)
+*.csv.zip
+07-projects/nlp-project/AI_Human.csv
+AI_Human.csv
+
+# Logs & temporary files
+*.log
+*.tmp
