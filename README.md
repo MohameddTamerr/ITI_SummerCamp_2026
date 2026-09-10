@@ -10,7 +10,7 @@ This repository documents my complete technical journey and coursework completed
 
 The program provided intensive, hands-on training across foundational and modern applied artificial intelligence domains—progressing systematically from core Python programming and data structures to Deep Learning, Computer Vision, Pretrained Transformers, Prompt Engineering, Agentic AI with LangChain, and full-stack AI application deployment.
 
-Every module in this repository is structured into documented lecture material, guided laboratory implementations, graded assignments, and a complete end-to-end NLP project with a live web interface.
+Every module in this repository is structured into documented lecture material, guided laboratory implementations, graded assignments, course projects, and references to the final capstone project.
 
 ---
 
@@ -34,8 +34,8 @@ The official training schedule followed a rigorous hands-on curriculum:
 | **22-Aug-2026** | LLMs & Generative AI (Part 2) | **Basil Reda** | System Prompt Engineering, Few-Shot Prompting, Output Structuring |
 | **25-Aug-2026** | RAG Fundamentals (Part 1) | **Muhammed Bassiouni** | Retrieval-Augmented Generation, Chunking Strategies, Vector Stores |
 | **26-Aug-2026** | RAG Fundamentals (Part 2) | **Muhammed Bassiouni** | Context Injection, Hybrid Search, Evaluation of RAG Pipelines |
-| **29-Aug - 02-Sep** | Final Project Implementation | *Project Phase* | End-to-End AI-Generated Text Detector (Model & Full Web App) |
-| **03-Sep-2026** | Final Project Demo & Defense | *Evaluation* | Presentation, Live Demonstration & Code Review |
+| **29-Aug - 02-Sep** | Final Capstone Project Work | *Project Phase* | Development of **Tamargi Pharma RAG** |
+| **03-Sep-2026** | Final Project Demo & Defense | *Evaluation* | Presentation, Live Demonstration & Technical Review |
 
 ---
 
@@ -178,9 +178,22 @@ Training and validation loss progression for custom PyTorch sequence model class
 
 ---
 
-## 🚀 Final Project: AI Generated Text Detector
+## 🏆 Final Capstone Project: Tamargi Pharma RAG
 
-The capstone project for the NLP module is an end-to-end **AI Generated Text Detector** application that accurately classifies input text as either **Human-Written** or **AI-Generated**.
+The official graduation capstone project developed at the conclusion of the ITI Summer Camp 2026 is **Tamargi Pharma RAG**, hosted in its dedicated standalone repository:
+
+🔗 **Project Repository**: [https://github.com/MohameddTamerr/tamargi-pharma-rag](https://github.com/MohameddTamerr/tamargi-pharma-rag)
+
+### About Tamargi Pharma RAG
+- **Domain**: Pharmaceutical and Clinical Information Retrieval & Question-Answering.
+- **Core Architecture**: Advanced Retrieval-Augmented Generation (RAG) system utilizing vector databases, embedding pipelines, semantic search, and grounded LLM generation.
+- **Features**: Accurate drug interaction lookup, medication queries, dosage guidance, and context-backed pharmaceutical insights.
+
+---
+
+## 🚀 Module Project: AI Generated Text Detector
+
+In addition to the final capstone, the NLP module includes an end-to-end **AI Generated Text Detector** application that classifies text as **Human-Written** or **AI-Generated**.
 
 - **Project Location**: [`07-projects/nlp-project/`](./07-projects/nlp-project/)
 - **Project Presentation**: [Project AI Generated Text Detector.pdf](./07-projects/nlp-project/Project%20AI%20Generated%20Text%20Detector.pdf)
@@ -280,7 +293,7 @@ Open `http://localhost:8000` or open `index.html` directly in your browser.
 - هندسة الأوامر (Prompt Engineering) والنماذج اللغوية الكبيرة (LLMs).
 - الذكاء الاصطناعي الوكيل (Agentic AI) وبناء وكلاء قادرين على استدعاء الأدوات والبحث التلقائي باستخدام LangChain.
 - أسس التوليد المدعوم بالاسترجاع (RAG).
-- مشروع نهائي متكامل لتصنيف النصوص المولدة بالذكاء الاصطناعي مع واجهة ويب تفاعلية وواجهة برمجية (API).
+- مشروع نهائي متكامل لتصنيف النصوص بالإضافة إلى مشروع التخرج الختامي للمعسكر.
 
 ---
 
@@ -302,7 +315,7 @@ Open `http://localhost:8000` or open `index.html` directly in your browser.
 | **22-08-2026** | النماذج اللغوية الكبيرة والذكاء الاصطناعي التوليدي (2) | **باسل رضا (Basil Reda)** | هندسة الأوامر (System Prompt Engineering)، النماذج التوليدية |
 | **25-08-2026** | أساسيات الـ RAG (1) | **محمد بسيوني (Muhammed Bassiouni)** | التوليد المدعوم بالاسترجاع، تقسيم النصوص، قواعد البيانات الشعاعية |
 | **26-08-2026** | أساسيات الـ RAG (2) | **محمد بسيوني (Muhammed Bassiouni)** | حقن السياق، البحث الهجين، تقييم منظومات الـ RAG |
-| **29-08 إلى 02-09** | العمل على المشروع النهائي | *مرحلة المشروع* | تطوير نموذج وتطبيق كاشف النصوص المولدة بالذكاء الاصطناعي |
+| **29-08 إلى 02-09** | العمل على مشروع التخرج النهائي | *مرحلة المشروع* | تطوير مشروع **Tamargi Pharma RAG** |
 | **03-09-2026** | العرض التقديمي والمناقشة | *التقييم النهائي* | استعراض ومناقشة المشروع النهائي |
 
 ---
@@ -354,10 +367,21 @@ Open `http://localhost:8000` or open `index.html` directly in your browser.
 
 ---
 
-## 🏆 المشروع النهائي: كاشف النصوص المولدة بالذكاء الاصطناعي (AI Text Detector)
+## 🏆 مشروع التخرج النهائي: Tamargi Pharma RAG
 
-مشروع تطبيقي متكامل يهدف إلى التمييز بين النصوص المكتوبة بواسطة البشر وتلك المولدة بواسطة نماذج الذكاء الاصطناعي:
-- **الموقع داخل المستودع**: [`07-projects/nlp-project/`](./07-projects/nlp-project/)
+مشروع التخرج الختامي لمعسكر التدريب الصيفي تم تطويره ونشره في مستودع منفصل مخصص:
+
+🔗 **رابط المستودع**: [https://github.com/MohameddTamerr/tamargi-pharma-rag](https://github.com/MohameddTamerr/tamargi-pharma-rag)
+
+- **المجال**: الاسترجاع الدقيق للمعلومات الصيدلانية والطبية وتوليد الإجابات الموثوقة.
+- **المعمارية**: منظومة متقدمة من التوليد المدعوم بالاسترجاع (RAG) تعتمد على قواعد البيانات الشعاعية (Vector Databases) ونماذج التضمين الدلالي وربطها بنماذج التوليد اللغوي لتوفير إجابات دقيقة حول الأدوية والتفاعلات الدوائية والجرعات.
+
+---
+
+## 🚀 مشروع المسار: كاشف النصوص المولدة بالذكاء الاصطناعي (AI Text Detector)
+
+مشروع تطبيقي متكامل لمسار معالجة اللغات الطبيعية يهدف إلى التمييز بين النصوص المكتوبة بواسطة البشر وتلك المولدة بواسطة نماذج الذكاء الاصطناعي:
+- **الموقع داخل هذا المستودع**: [`07-projects/nlp-project/`](./07-projects/nlp-project/)
 - **خط بناء وتدريب النموذج**: معالجة النصوص وحساب أوزان TF-IDF وتدريب مصنف متقدم وحفظ النموذج في صيغة `joblib`.
 - **الواجهة الخلفية (Backend API)**: خادم REST API مبني بواسطة **FastAPI** يقدم خدمة التنبؤ اللحظي مع حساب نسبة الثقة.
 - **واجهة المستخدم (Frontend UI)**: واجهة عصرية وسريعة الاستجابة مبنية بـ HTML/CSS/JS تدعم التحليل الفوري للنصوص وعرض المؤشرات البيانية للثقة.
@@ -410,7 +434,7 @@ ITI-Summer-Camp-2026/
 │   └── kaggle-course/                               # دورة التعلم العميق وبناء الشبكات العصبية بـ Keras
 │
 ├── 07-projects/
-│   └── nlp-project/                                 # المشروع النهائي: كاشف النصوص المولدة بالذكاء الاصطناعي
+│   └── nlp-project/                                 # مشروع مسار NLP: كاشف النصوص المولدة بالذكاء الاصطناعي
 │       ├── main.py                                  # خادم FastAPI للواجهة البرمجية
 │       ├── train_model.py                           # كود معالجة وتدريب وتصدير النموذج
 │       ├── index.html & style.css & app.js          # الواجهة الأمامية للمستخدم
